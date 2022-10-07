@@ -1,0 +1,36 @@
+Steps to Start a Project
+
+Use VScode command prompt or command prompt.
+1. Install pipenv
+2. Install Django
+3. Once you navigate to the folder where you installed Django using cd, 
+4. django-admin startproject Django_project to start the project in the file
+5. Navigate to the folder where you have manage.py using cd.
+6. python manage.py runserver
+7. pipenv run python manage.py runserver. Check if server running by typing in localhost:8000 to browser to see if website pops up.
+8. pipenv run python manage.py startapp app_name to start a Django app called app_name. Do this in the Django project directory.
+
+
+USE THESE INSTRUCTIONS IF USING WINDOWS AND JUST CLONED GIT REPO
+1. cd C:\Users\user\Desktop\UserDjangoProject>: pip install virtualenv
+2. For Create a venv run this: virtualenv -p python3 venv
+3. Activate virtualenv: source venv/Scripts/activate
+4. It will look like this: (venv) C:\Users\user\Desktop\UserDjangoProject>
+5. Then run: pip install -r requirements.txt
+6. Run the django project run this: pipenv run python manage.py runserver
+
+Create database
+--> pipenv run python manage.py makemigrations
+--> pipenv run python manage.py migrate
+
+Create Superuser
+--> python manage.py createsuperuser
+
+### Models/Creating tables in db
+
+Create model in models.py
+--> pipenv run python manage.py makemigrations
+--> pipenv run python manage.py migrate
+
+register model:
+in admin.py file --> admin.site.register(Model_name)

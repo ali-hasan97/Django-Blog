@@ -1,0 +1,19 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+	<article class="media content-section">
+		<div class="media-body">
+		  <div class="article-metadata">
+			<a class="mr-2" href="#">{{ object.author }}</a>
+			<small class="text-muted">{{ object.date_posted|date:"F d, Y" }}</small>
+			<h6 class="float-right"><a href="{% url 'category' post.category %}">{{ post.category }}</a></h6>
+		  </div>
+		  <h2><a class="article-title">{{ object.title }}</a></h2>
+		  <p class="article-content">{{ object.content|safe }}</p>
+		</div>
+	  </article>
+	<div class="form-group">
+		<a href="delete"><button class="btn btn-outline-danger">Delete</button></a>
+		<a class="float-right" href="update"><button>Update</button></a>
+	</div>
+{% endblock %}

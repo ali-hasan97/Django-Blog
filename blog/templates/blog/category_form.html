@@ -1,0 +1,20 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+        <div class = "content-section">
+            <form method = "POST">
+                {% csrf_token %}
+                <div class="media">
+                    <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
+                </div>
+                <fieldset class="form-group">
+                    <legend class="border-bottom mb-4">Create a New Category</legend>
+                    {{ form|crispy }}
+                </fieldset>
+                <div class="form-group">
+                    <button class="btn btn-outline-light">Add
+                    </button>
+                </div>
+            </form>
+        </div>
+{% endblock %}
