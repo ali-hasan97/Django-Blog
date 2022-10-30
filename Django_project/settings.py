@@ -29,7 +29,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
 'django-blog-dev.us-west-2.elasticbeanstalk.com',
@@ -146,15 +146,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 # USE THIS TO LOAD STATIC FILES FROM AWS S3. MAKE SURE TO UNCOMMENT BEFORE DEPLOYMENT/LOADING STATIC.
-# STATIC_URL = '/static/'
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, "blog/static"),
-# ]
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "blog/static"),
+]
 
 # USE THIS TO LOAD STATIC FILES LOCALLY FOR DEVELOPMENT
-STATIC_DIR = os.path.join(BASE_DIR, 'static')
-STATIC_URL = '/blog/static/'
-STATICFILES_DIRS = [STATIC_DIR, ]
+# STATIC_DIR = os.path.join(BASE_DIR, 'static')
+# STATIC_URL = '/blog/static/'
+# STATICFILES_DIRS = [STATIC_DIR, ]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -184,7 +184,7 @@ AWS_DEFAULT_ACL = 'public-read'
 
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 # USE THIS TO INDICATE LOCATION OF STATIC FILES IN AWS S3. UNCOMMENT BEFORE DEPLOYING/LOADING STATIC.
-# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
 
 '''
 [
