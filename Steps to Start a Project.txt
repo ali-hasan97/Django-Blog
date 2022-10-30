@@ -34,3 +34,6 @@ Create model in models.py
 
 register model:
 in admin.py file --> admin.site.register(Model_name)
+
+Outdated Static Files being used:
+Clear browser cache with ctrl+shift+del to use latest static file if changes arent being loaded.
